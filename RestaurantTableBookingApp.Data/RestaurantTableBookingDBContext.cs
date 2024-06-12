@@ -9,7 +9,7 @@ namespace RestaurantTableBookingApp.Data
         {
                 
         }
-
+        
         public DbSet<Restaurant> Restaurant { get; set; }
         public DbSet<DiningTable> DiningTable { get; set; }
         public DbSet<Reservation> Reservation { get; set; }

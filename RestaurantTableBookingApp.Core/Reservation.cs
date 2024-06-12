@@ -15,9 +15,6 @@ public partial class Reservation
     public int UserId { get; set; }
 
     [Required]
-    public int TableId { get; set; }
-
-    [Required]
     public int TimeSlotId { get; set; }
 
     [Required]
@@ -28,9 +25,6 @@ public partial class Reservation
     [Unicode(false)]
     public string ReservationStatus { get; set; } = null!;
 
-    [ForeignKey("TableId")]
-    [InverseProperty("Reservations")]
-    public virtual DiningTable Table { get; set; } = null!;
 
     [ForeignKey("TimeSlotId")]
     [InverseProperty("Reservations")]

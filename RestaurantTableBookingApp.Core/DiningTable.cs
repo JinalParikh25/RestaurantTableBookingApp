@@ -11,8 +11,7 @@ public partial class DiningTable
     [Key]
     public int Id { get; set; }
 
-    [Required]
-    public int BranchId { get; set; }
+    public int RestaurantBranchId { get; set; }
 
     [Required]
     [StringLength(100)]
@@ -25,7 +24,4 @@ public partial class DiningTable
     [ForeignKey("BranchId")]
     [InverseProperty("DiningTables")]
     public virtual RestaurantBranch Branch { get; set; } = null!;
-
-    [InverseProperty("Table")]
-    public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }
