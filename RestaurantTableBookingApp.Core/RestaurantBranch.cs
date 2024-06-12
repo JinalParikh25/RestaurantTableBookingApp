@@ -43,7 +43,4 @@ public partial class RestaurantBranch
     [ForeignKey("RestaurantId")]
     [InverseProperty("RestaurantBranches")]
     public virtual Restaurant Restaurant { get; set; } = null!;
-
-    [InverseProperty("Branch")]
-    public virtual ICollection<TimeSlot> TimeSlots { get; set; } = new List<TimeSlot>();
 }

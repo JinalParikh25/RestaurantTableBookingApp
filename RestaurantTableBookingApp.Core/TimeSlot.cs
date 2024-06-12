@@ -12,7 +12,7 @@ public partial class TimeSlot
     public int Id { get; set; }
 
     [Required]
-    public int BranchId { get; set; }
+    public int DiningTableId { get; set; }
 
     [Required]
     public DateOnly ReservationDay { get; set; }
@@ -27,9 +27,7 @@ public partial class TimeSlot
     [Unicode(false)]
     public string TableStatus { get; set; } = null!;
 
-    [ForeignKey("BranchId")]
-    [InverseProperty("TimeSlots")]
-    public virtual RestaurantBranch Branch { get; set; } = null!;
+    public virtual DiningTable DinningTable { get; set; } = null!;
 
     [InverseProperty("TimeSlot")]
     public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();

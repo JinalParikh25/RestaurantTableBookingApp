@@ -34,6 +34,9 @@ public partial class User
     [Unicode(false)]
     public string? ProfileImageUrl { get; set; }
 
+    public DateTime CreatedDate { get; set; }
+
+    public DateTime UpdateDate { get; set; }
     [InverseProperty("User")]
     public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }
