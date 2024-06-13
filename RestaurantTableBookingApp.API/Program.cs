@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using RestaurantTableBookingApp.Data;
+using RestaurantTableBookingApp.Service;
 
 namespace RestaurantTableBookingApp.API
 {
@@ -12,6 +13,8 @@ namespace RestaurantTableBookingApp.API
             var configuration = builder.Configuration;
 
             // Add services to the container.
+            builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
             builder.Services.AddDbContext<RestaurantTableBookingDBContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DbContext") ?? "")
