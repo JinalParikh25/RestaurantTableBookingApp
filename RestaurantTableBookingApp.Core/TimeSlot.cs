@@ -15,7 +15,7 @@ public partial class TimeSlot
     public int DiningTableId { get; set; }
 
     [Required]
-    public DateOnly ReservationDay { get; set; }
+    public DateTime ReservationDay { get; set; }
 
     [Required]
     [StringLength(100)]

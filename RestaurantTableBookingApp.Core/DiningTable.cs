@@ -16,12 +16,12 @@ public partial class DiningTable
     [Required]
     [StringLength(100)]
     [Unicode(false)]
-    public string? SeatsName { get; set; }
+    public string? TableName { get; set; }
 
     [Required]
     public int Capacity { get; set; }
 
-    [ForeignKey("BranchId")]
-    [InverseProperty("DiningTables")]
     public virtual RestaurantBranch Branch { get; set; } = null!;
+
+    public virtual  ICollection<TimeSlot> TimeSlots { get; set; } = new List<TimeSlot>();
 }
